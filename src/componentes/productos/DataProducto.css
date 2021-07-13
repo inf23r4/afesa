@@ -1,5 +1,0 @@
-.CardProducto {
-    box-sizing: content-box;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-}

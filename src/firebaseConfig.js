@@ -1,22 +1,18 @@
 import firebase from "firebase/app"
-import "firebase/auth"
-import "firebase/firebase-firestore"
-
-
-
+import "firebase/storage"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyC4tEDRbbGPs4CjWkIWoute5LWjdWDMrNY",
-    authDomain: "utnreact-28026.firebaseapp.com",
-    databaseURL: "https://utnreact-28026-default-rtdb.firebaseio.com",
-    projectId: "utnreact-28026",
-    storageBucket: "utnreact-28026.appspot.com",
-    messagingSenderId: "103013912803",
-    appId: "1:103013912803:web:c3c461dcc6696d3ba3b5d6"
+
+    apiKey: "AIzaSyBLCY4BFqEpXBaiXqXIR1BTFc1HKu9gy8A",
+    authDomain: "datafirebase-d3256.firebaseapp.com",
+    projectId: "datafirebase-d3256",
+    storageBucket: "datafirebase-d3256.appspot.com",
+    messagingSenderId: "56949868780",
+    appId: "1:56949868780:web:b5a8baf216f366d5243dc9",
+    measurementId: "G-W9SPNQNDZ9"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  firebase.auth = firebase.auth();
-  firebase.database= firebase.firestore();
-  
-  export default firebase;
+  const storage = firebase.storage();
+
+  export { storage, firebase as default };
