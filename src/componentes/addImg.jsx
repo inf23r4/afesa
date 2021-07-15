@@ -18,7 +18,6 @@ export default function AddImg() {
       ref
         .getDownloadURL()
         .then((url) => {
-          setFile(null);
           setURL(url);
         });
     });
