@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route>
-          <DataImg/>
+          <AddImg/>
         </Route>
 
      </Switch>

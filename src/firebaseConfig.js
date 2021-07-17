@@ -1,8 +1,8 @@
-import firebase from "firebase/app"
-import "firebase/storage"
+import firebase from 'firebase/app'
+import "firebase/firebase-firestore"
+import 'firebase/storage'
 
-const firebaseConfig = {
-
+export const base = firebase.initializeApp({
     apiKey: "AIzaSyBLCY4BFqEpXBaiXqXIR1BTFc1HKu9gy8A",
     authDomain: "datafirebase-d3256.firebaseapp.com",
     projectId: "datafirebase-d3256",
@@ -10,9 +10,7 @@ const firebaseConfig = {
     messagingSenderId: "56949868780",
     appId: "1:56949868780:web:b5a8baf216f366d5243dc9",
     measurementId: "G-W9SPNQNDZ9"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
+  });
   const storage = firebase.storage();
 
   export { storage, firebase as default };
