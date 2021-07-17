@@ -49,7 +49,7 @@ function App() {
       <ul>
         {users.map((user) => {
           return (
-            <li key={user.name}>
+            <li key={user.id}>
               <img width="100" height="50" src={user.avatar} alt={user.name} />
               <p>{user.name}</p>
             </li>

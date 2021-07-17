@@ -1,8 +1,8 @@
 import React from "react"
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 import './App.css';
+import Home from "./componentes/Home"
 import AddImg from "./componentes/addImg";
-import DataImg from "./componentes/confImg";
 
 
 
@@ -11,7 +11,7 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route>
-          <AddImg/>
+          <Home/>
         </Route>
 
      </Switch>

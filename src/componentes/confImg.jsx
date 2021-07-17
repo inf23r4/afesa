@@ -1,26 +1,38 @@
-import React, { useEffect, useState } from "react"
-import { storage } from "../firebaseConfig"
+import React, { useState, useEffect } from 'react'
+import { base } from "../firebaseConfig"
 
-export default function DataImg (){
+const db = base.firestore();
 
-    const [url, setURL] = useState("");
-    const [file, setFile] = useState(null);
+function ConfImg() {
 
-    useEffect (
-        ()=>{
-            const ref = storage.ref();
-            const getimg = storage.child();
-            getimg
-        .getDownloadURL()
-        .then((url) => {
-            console.log(url)
-          setFile(null);
-          setURL(url);
-        });
-        }
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+          const usersCollection = await db.collection("users").get();
+          setUsers(
+            usersCollection.docs.map((doc) => {
+              return doc.data();
+            })
+          );
+        };
+        fetchUsers();
+      }, []);
+
+    return (
+        <div>
+                  <ul>
+        {users.map((user) => {
+          return (
+            <li key={user.id}>
+              <img width="100" height="50" src={user.avatar} alt={user.name} />
+              <p>{user.name}</p>
+            </li>
+          );
+        })}
+      </ul>
+            
+        </div>
     )
-    return(
-        <img src={url} alt="" />
-    )
-
-};
+}
+export default ConfImg;
