@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Navbar from "./Navbar.jsx"
-import ConfImg from './confImg';
+import BannerCarousel from '../Carousels/BannerCarousel.jsx';
 
 export default function Home() {
 
@@ -19,7 +19,7 @@ export default function Home() {
     return (
       <div className="App">
         <Navbar isScrolling = {scrollHeingt}/>
-        <ConfImg/>
+        <BannerCarousel/>
       </div>
     )
   
